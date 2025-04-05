@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Login - Student Shoe Store</title>
+    <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body>
-
+    <div class="login-container">
+        <div class="login-header">
+            <span>STUDENT SHOE STORE</span>
+            <span>LOG IN PAGE</span>
+        </div>
+      
+        <div class="login-box">
+            <div class="go-back">
+                <button onclick="window.location.href='index.html'">Go Back</button>
+            </div>
+      
+            <h1>Welcome!</h1>
+            <p>Please enter your credentials to log in.</p>
+      
+            <form>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required>
+      
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+      
+                <button type="submit">Login</button>
+            </form>
+      
+            <p>Or</p>
+      
+            <button onclick="window.location.href='signup.html'">Sign Up</button>
+        </div>
+    </div>
 </body>
 </html>
