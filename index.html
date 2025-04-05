@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Start Page</title>
+    <title>Student Shoe Store</title>
+    <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body>
-<h1>Webpage and stuff</h1>
+    <!--Navbar-->
+    <nav class="navbar">
+        <h1 class="logo">STUDENT SHOE STORE</h1>
+        <input type="text" placeholder="Search for products......" class="search-bar" />
+        <div class="nav-links">
+            <a href="login.html">Sign Up/Sign In</a>
+            <a href="cart.html">Cart & Checkout</a>
+        </div>
+    </nav>
+
+    <!--Filter Bar-->
+    <div class="filter-bar">Filter Products</div>
+
+    <!--Product Grid-->
+    <div class="product-grid">
+        <!--Temp Product-->
+        <div class="product-card">
+            <div class="product-image">Image</div>
+            <h2>Product Name</h2>
+            <p>$0.00</p>
+            <button>View Product Details</button>
+        </div>
+        <!--Generate rest of products with JS later-->
+    </div>
+
+    <!--Pagination-->
+    <div class="pagination">
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>Next &gt;</button>
+    </div>
 </body>
 </html>
