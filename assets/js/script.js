@@ -730,3 +730,24 @@ function updatePagination() {
         pagination.appendChild(btn);
     }
 }
+
+function loadProductDetails() {
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+    const product = products.find(p => p.id === id);
+
+    if (!product) {
+        alert("Product not found.");
+        return;
+    }
+
+    document.getElementById("product-image").src = product.image;
+    document.getElementById("product-image").alt = product.name;
+    document.getElementById("product-name").textContent = product.name;
+    document.getElementById("product-price").textContent = product.price;
+    document.getElementById("product-brand").textContent = product.brand;
+    document.getElementById("product-gender").textContent = product.gender;
+    document.getElementById("product-category").textContent = product.category;
+    document.getElementById("product-color").textContent = product.color;
+    document.getElementById("product-size").textContent = product.size;
+}
