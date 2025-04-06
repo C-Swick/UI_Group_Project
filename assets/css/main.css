@@ -373,6 +373,20 @@
     background-color: #555;
   }
 
+  .back-btn {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: #ccc;
+}
+
   /* Order Summary Page */
 .order-summary-page {
     padding: 24px;

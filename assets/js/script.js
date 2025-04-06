@@ -710,6 +710,7 @@ function loadProductGrid(page = 1) {
     });
   
     updatePagination();
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function updatePagination() {
