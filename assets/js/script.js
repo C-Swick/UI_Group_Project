@@ -751,3 +751,4 @@ function loadProductDetails() {
     document.getElementById("product-color").textContent = product.color;
     document.getElementById("product-size").textContent = product.size;
 }
+

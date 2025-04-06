@@ -75,11 +75,18 @@
     font-size: 14px;
     margin-bottom: 8px;
   }
-  
+
   .product-image img {
-    max-width: 100%;
     max-height: 100%;
+    max-width: 100%;
     object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .product-image img:hover {
+    transform: scale(1.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0.95;
   }
   
   .product-card h2 {
@@ -282,6 +289,7 @@
   .add-to-cart-btn:hover {
     background-color: #555;
   }
+ 
 
   /* Cart Page */
 .cart-page {
