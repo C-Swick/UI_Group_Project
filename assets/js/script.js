@@ -704,14 +704,14 @@ function loadProductGrid(page = 1) {
         </div>
         <h2>${product.name}</h2>
         <p>${product.price}</p>
-        <button onclick="location.href='product.html?id=${product.id}'">View Product Details</button>
+        <button onclick="viewProductDetails(${product.id})">View Product Details</button>
       `;
       container.appendChild(card);
     });
   
     updatePagination();
-  }
-  
+}
+
 function updatePagination() {
     const pagination = document.getElementById("pagination");
     if (!pagination) return;
@@ -731,13 +731,20 @@ function updatePagination() {
     }
 }
 
-function loadProductDetails() {
-    const params = new URLSearchParams(window.location.search);
-    const id = parseInt(params.get("id"));
+function viewProductDetails(id) {
     const product = products.find(p => p.id === id);
+    if (product) {
+        localStorage.setItem("selectedProduct", JSON.stringify(product));
+        location.href = "product.html";
+    }
+}
+
+function loadProductDetails() {
+    const product = JSON.parse(localStorage.getItem("selectedProduct"));
 
     if (!product) {
-        alert("Product not found.");
+        alert("No product selected.");
+        window.location.href = "index.html";
         return;
     }
 

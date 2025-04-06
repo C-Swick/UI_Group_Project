@@ -325,6 +325,13 @@
     font-size: 14px;
     border: 1px solid #ccc;
   }
+
+  .cart-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
   
   .cart-details {
     flex-grow: 1;
