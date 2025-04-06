@@ -50,8 +50,10 @@
   /* Product Grid */
   .product-grid {
     display: grid;
-    gap: 16px;
-    padding: 16px;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 24px;
+    row-gap: 100px;
+    padding: 50px;
   }
   
   .product-card {
