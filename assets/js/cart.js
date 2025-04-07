@@ -77,18 +77,29 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //Checkout button
     const checkoutBtn = document.querySelector(".checkout-btn");
-    checkoutBtn.addEventListener("click", () => {
+    checkoutBtn.addEventListener("click", (e) => {
         if (cart.length === 0) {
             alert("Your cart is empty.");
             return;
         }
 
         localStorage.setItem(`${loggedInUser}_lastOrder`, JSON.stringify(cart));
-
+        
         //Clear cart
         localStorage.removeItem(cartKey);
         window.location.href = "order-summary.html";
     });
+
+    //Enable checkout button based on shipping form 
+    const shippingForm = document.getElementById("shipping-form");
+    if (shippingForm) {
+        shippingForm.addEventListener("input", () => {
+            checkoutBtn.disabled = !shippingForm.checkValidity();
+        });
+
+        //Set checkout button initial state based on shipping form
+        checkoutBtn.disabled = !shippingForm.checkValidity();
+    }
 });
 
 //Remove item from cart
