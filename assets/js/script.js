@@ -685,43 +685,56 @@ const products = [
 
 const productsPerPage = 15;
 let currentPage = 1;
+let filteredResults = null;
 
-var searchBar= document.getElementById('searchbar');
+var searchBar = document.getElementById('searchbar') || document.querySelector('.search-bar');
 
 function loadProductGrid(page = 1) {
     const container = document.getElementById("product-grid");
     if (!container) return;
-  
+
     container.innerHTML = "";
+
+    const itemsToDisplay = filteredResults || products;
     const start = (page - 1) * productsPerPage;
     const end = start + productsPerPage;
-    const currentProducts = products.slice(start, end);
-  
+    const currentProducts = itemsToDisplay.slice(start, end);
+
     currentProducts.forEach(product => {
         const card = document.createElement("div");
         card.className = "product-card";
         card.innerHTML = `
-        <div class="product-image">
-            <img src="${product.image}" alt="${product.name}" />
-        </div>
-        <h2>${product.name}</h2>
-        <p>${product.price}</p>
-        <button onclick="viewProductDetails(${product.id})">View Product Details</button>
-      `;
-      container.appendChild(card);
+            <div class="product-image">
+                <img src="${product.image}" alt="${product.name}" />
+            </div>
+            <h2>${product.name}</h2>
+            <p>${product.price}</p>
+            <button onclick="viewProductDetails(${product.id})">View Product Details</button>
+        `;
+        container.appendChild(card);
     });
-  
-    updatePagination();
+
+    updatePagination(itemsToDisplay.length);
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function updatePagination() {
+function updatePagination(totalItems) {
     const pagination = document.getElementById("pagination");
     if (!pagination) return;
-  
+
     pagination.innerHTML = "";
-    const totalPages = Math.ceil(products.length / productsPerPage);
-  
+    const totalPages = Math.ceil(totalItems / productsPerPage);
+
+    if (currentPage > 1) {
+        const prev = document.createElement("button");
+        prev.textContent = "Previous";
+        prev.onclick = () => {
+            currentPage--;
+            loadProductGrid(currentPage);
+        };
+        pagination.appendChild(prev);
+    }
+
     for (let i = 1; i <= totalPages; i++) {
         const btn = document.createElement("button");
         btn.textContent = i;
@@ -731,6 +744,16 @@ function updatePagination() {
         };
         if (i === currentPage) btn.style.fontWeight = "bold";
         pagination.appendChild(btn);
+    }
+
+    if (currentPage < totalPages) {
+        const next = document.createElement("button");
+        next.textContent = "Next";
+        next.onclick = () => {
+            currentPage++;
+            loadProductGrid(currentPage);
+        };
+        pagination.appendChild(next);
     }
 }
 
@@ -762,51 +785,65 @@ function loadProductDetails() {
     document.getElementById("product-size").textContent = product.size;
 }
 
-function loadSearchGrid(page = 1){
-    // Basically loadProductGrid() with a slight modification....ugly but it works lol
-    var searched = document.getElementById('searchbar').value;
-    if(searched === ""){
-        loadProductGrid();
-        return;
+function performSearch() {
+    const query = document.getElementById('searchbar').value.trim();
+    if (query === "") {
+        filteredResults = null;
+    } else {
+        const searchRegex = new RegExp(query, 'i');
+        filteredResults = products.filter(product =>
+            searchRegex.test(product.name) ||
+            searchRegex.test(product.brand) ||
+            searchRegex.test(product.size)
+        );
     }
-    var searchQuery = new RegExp(searched,'i');
-    //const currentProducts = products.slice(start,end);
-    var filteredProducts = new Array(0);
-    //console.log(searchQuery)
-    //Find products containing the search string -- regex
-
-    const container = document.getElementById("product-grid");
-    if (!container) return;
-
-    container.innerHTML = "";
-    const start = (page - 1) * productsPerPage;
-    const end = start + productsPerPage;
-    const currentProducts = products.slice(start, end);
-    filteredProducts = currentProducts.filter((function(str){
-        return searchQuery.test(str.brand) || searchQuery.test(str.name) || searchQuery.test(str.size);
-    }));
-    filteredProducts.forEach(product => {
-        const card = document.createElement("div");
-        card.className = "product-card";
-        card.innerHTML = `
-            <div class="product-image">
-                <img src="${product.image}" alt="${product.name}" />
-            </div>
-            <h2>${product.name}</h2>
-            <p>${product.price}</p>
-            <button onclick="viewProductDetails(${product.id})">View Product Details</button>
-        `;
-        container.appendChild(card);
-    });
-
-    updatePagination();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    currentPage = 1;
+    loadProductGrid(currentPage);
 }
 
-//document.addEventListener('DOMContentLoaded', loadProductGrid,false);
-if(!searchBar){
-    searchBar = document.getElementById('searchbar');
+//Handle search bar enter key (on any page)
+function handleSearchKeyPress(e) {
+    if (e.key === "Enter") {
+        const query = e.target.value.trim();
+        if (query !== "") {
+            localStorage.setItem("searchQuery", query);
+            window.location.href = "index.html";
+        }
+    }
 }
-else{
-    searchBar.addEventListener('keyup',function(){ loadSearchGrid(1);},false);
+
+window.addEventListener("DOMContentLoaded", () => {
+    const isOnIndex = window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("/index");
+
+    if (isOnIndex) {
+        const storedQuery = localStorage.getItem("searchQuery");
+        if (storedQuery) {
+            const input = document.getElementById("searchbar");
+            if (input) input.value = storedQuery;
+
+            const searchRegex = new RegExp(storedQuery, 'i');
+            filteredResults = products.filter(product =>
+                searchRegex.test(product.name) ||
+                searchRegex.test(product.brand) ||
+                searchRegex.test(product.size)
+            );
+            localStorage.removeItem("searchQuery");
+        }
+
+        loadProductGrid(currentPage);
+    }
+});
+
+const isOnIndex = window.location.pathname.endsWith("index.html") || 
+                  window.location.pathname === "/" || 
+                  window.location.pathname.endsWith("/index");
+
+if (searchBar) {
+    //Live search only on index.html
+    if (isOnIndex) {
+        searchBar.addEventListener('keyup', performSearch);
+    }
+
+    //Enter key search on all pages
+    searchBar.addEventListener('keypress', handleSearchKeyPress);
 }
