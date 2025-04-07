@@ -16,8 +16,36 @@
         </div>
     </nav>
 
-    <!--Filter Bar-->
-    <div class="filter-bar">Filter Products</div>
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <span>Filter Products:</span>
+        <div class="filter-group">
+            <button onclick="toggleDropdown('category')">Category</button>
+            <div class="dropdown" id="category-dropdown"></div>
+        </div>
+        <div class="filter-group">
+            <button onclick="toggleDropdown('brand')">Brand</button>
+            <div class="dropdown" id="brand-dropdown"></div>
+        </div>
+        <div class="filter-group">
+            <button onclick="toggleDropdown('size')">Size</button>
+            <div class="dropdown" id="size-dropdown"></div>
+        </div>
+        <div class="filter-group">
+            <button onclick="toggleDropdown('color')">Color</button>
+            <div class="dropdown" id="color-dropdown"></div>
+        </div>
+        <div class="filter-group">
+            <button onclick="toggleDropdown('gender')">Gender</button>
+            <div class="dropdown" id="gender-dropdown"></div>
+        </div>
+        <div class="filter-group">
+            <button onclick="toggleDropdown('price')">Price</button>
+            <div class="dropdown" id="price-dropdown"></div>
+        </div>
+
+        <button onclick="clearFilters()" class="clear-btn">Clear Filters</button>
+    </div>
 
     <!--Product Grid-->
     <div id="product-grid" class="product-grid"></div>

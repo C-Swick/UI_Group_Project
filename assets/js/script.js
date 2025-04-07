@@ -832,6 +832,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
         loadProductGrid(currentPage);
     }
+    if (isOnIndex) {
+        populateFilters();
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        const savedFilters = JSON.parse(localStorage.getItem(loggedInUser ? `filters_${loggedInUser}` : "filters_guest"));
+        if (savedFilters) {
+            for (const [filter, values] of Object.entries(savedFilters)) {
+                values.forEach(val => {
+                const checkbox = document.querySelector(`input[data-filter="${filter}"][value="${val}"]`);
+                if (checkbox) checkbox.checked = true;
+            });
+        }
+        applyFilters();
+        }
+    }
 });
 
 const isOnIndex = window.location.pathname.endsWith("index.html") || 
@@ -847,3 +861,68 @@ if (searchBar) {
     //Enter key search on all pages
     searchBar.addEventListener('keypress', handleSearchKeyPress);
 }
+
+function getUniqueOptions(attribute) {
+    const all = products.map(p => p[attribute]);
+    return [...new Set(all)];
+}
+
+function toggleDropdown(filter) {
+    const dropdown = document.getElementById(`${filter}-dropdown`);
+    const isVisible = dropdown.style.display === 'block';
+    document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
+    if (!isVisible) dropdown.style.display = 'block';
+}
+
+function populateFilters() {
+    const filters = ['category', 'brand', 'size', 'color', 'gender', 'price'];
+    filters.forEach(filter => {
+        const dropdown = document.getElementById(`${filter}-dropdown`);
+        const options = getUniqueOptions(filter);
+
+        dropdown.innerHTML = options.map(opt => `
+            <label><input type="checkbox" value="${opt}" data-filter="${filter}" onchange="applyFilters()"> ${opt}</label>
+        `).join('');
+    });
+}
+
+function applyFilters() {
+    const filters = {};
+    document.querySelectorAll('.dropdown input[type="checkbox"]:checked').forEach(input => {
+        const filterName = input.dataset.filter;
+        if (!filters[filterName]) filters[filterName] = [];
+        filters[filterName].push(input.value);
+    });
+
+    const loggedInUser = localStorage.getItem("loggedInUser");
+        if (loggedInUser) {
+            localStorage.setItem(`filters_${loggedInUser}`, JSON.stringify(filters));
+        } else {
+            localStorage.setItem("filters_guest", JSON.stringify(filters));
+        }
+
+    filteredResults = products.filter(product => {
+        return Object.entries(filters).every(([key, values]) => values.includes(product[key]));
+    });
+
+    currentPage = 1;
+    loadProductGrid();
+}
+
+function clearFilters() {
+    document.querySelectorAll('.dropdown input[type="checkbox"]').forEach(cb => cb.checked = false);
+    localStorage.removeItem("activeFilters");
+    filteredResults = null;
+    loadProductGrid();
+}
+
+document.addEventListener('click', function (event) {
+    const isDropdownButton = event.target.closest('.filter-group > button');
+    const isInsideDropdown = event.target.closest('.dropdown');
+
+    if (!isDropdownButton && !isInsideDropdown) {
+        document.querySelectorAll('.dropdown').forEach(drop => {
+            drop.style.display = 'none';
+        });
+    }
+});

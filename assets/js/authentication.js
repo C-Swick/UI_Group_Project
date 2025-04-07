@@ -58,6 +58,11 @@ window.addEventListener("DOMContentLoaded", () => {
         authLink.href = "#";
         authLink.addEventListener("click", (e) => {
             e.preventDefault();
+            const currentUser = localStorage.getItem("loggedInUser");
+            if (currentUser) {
+                localStorage.removeItem(`filters_${currentUser}`);
+            }
+            localStorage.removeItem("filters_guest");
             localStorage.removeItem("loggedInUser");
             alert("You have been logged out.");
             window.location.reload();
