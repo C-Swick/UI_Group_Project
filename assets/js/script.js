@@ -211,7 +211,7 @@ const products = [
     },
     {
         id: 16,
-        name: "adidas Men's GameCourt 2 Tennis Shoes",
+        name: "Adidas Men's GameCourt 2 Tennis Shoes",
         price: "$55.99",
         image: "assets/images/adidas Men's GameCourt 2 Tennis Shoes.png",
         brand: "Adidas",
@@ -281,10 +281,10 @@ const products = [
     },
     {
         id: 21,
-        name: "adidas Adults' Trae Unlimited Basketball Shoes",
+        name: "Adidas Adults' Trae Unlimited Basketball Shoes",
         price: "$65.99",
         image: "assets/images/adidas Adults' Trae Unlimited Basketball Shoes.png",
-        brand: "adidas",
+        brand: "Adidas",
         category: "Athletic", 
         gender: "Both",
         color: "White",
@@ -295,10 +295,10 @@ const products = [
     },
     {
         id: 22,
-        name: "adidas Men's Adilette Shower Slides",
+        name: "Adidas Men's Adilette Shower Slides",
         price: "$24.99",
         image: "assets/images/adidas Men's Adilette Shower Slides.png",
-        brand: "adidas",
+        brand: "Adidas",
         category: "Casual", 
         gender: "Men's",
         color: "Red",
@@ -534,10 +534,10 @@ const products = [
     },
     {
         id: 37,
-        name: "adidas Women's X_PLR Path Shoes",
+        name: "Adidas Women's X_PLR Path Shoes",
         price: "$57.99",
         image: "assets/images/adidas Women's X_PLR Path Shoes.png",
-        brand: "adidas",
+        brand: "Adidas",
         category: "Athletic", 
         gender: "Women's",
         color: "Red",
@@ -576,10 +576,10 @@ const products = [
     },
     {
         id: 40,
-        name: "adidas Women's Galaxy 7 Running Shoes",
+        name: "Adidas Women's Galaxy 7 Running Shoes",
         price: "$49.99",
         image: "assets/images/adidas Women's Galaxy 7 Running Shoes.png",
-        brand: "adidas",
+        brand: "Adidas",
         category: "Running", 
         gender: "Women's",
         color: "Pink",
@@ -807,10 +807,10 @@ const products = [
     },
     {
         id: 56,
-        name: "adidas Women's adizero Ubersonic 4 Tennis Shoes",
+        name: "Adidas Women's adizero Ubersonic 4 Tennis Shoes",
         price: "$104.99",
         image: "assets/images/adidas Women's adizero Ubersonic 4 Tennis Shoes.png",
-        brand: "adidas",
+        brand: "Adidas",
         category: "Athletic", 
         gender: "Women's",
         color: "Yellow",
@@ -1060,8 +1060,20 @@ if (searchBar) {
 
 function getUniqueOptions(attribute) {
     const all = products.map(p => p[attribute]);
-    return [...new Set(all)];
+    const unique = [...new Set(all)];
+    //Sort numerically for the size and price dropdown
+    if (attribute === "size" || attribute === "price") {
+        return unique.sort((a, b) => {
+            const numA = attribute === "price" ? parseFloat(a.replace('$', '')) : parseFloat(a);
+            const numB = attribute === "price" ? parseFloat(b.replace('$', '')) : parseFloat(b);
+            return numA - numB;
+        });
+    } else {
+        //Sort alphabetically for every other filter
+        return unique.sort((a, b) => a.localeCompare(b));
+    }
 }
+
 
 function toggleDropdown(filter) {
     const dropdown = document.getElementById(`${filter}-dropdown`);
