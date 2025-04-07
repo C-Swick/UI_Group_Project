@@ -8,7 +8,11 @@ const products = [
         category: "Athletic", 
         gender: "Men's",
         color: "Grey",
-        size: "10"
+        size: "10",
+        description: "Step into comfort and style with the Nike Men's Air Max Nuaxis Shoes. \
+        Breathable mesh uppers and synthetic overlays offer lightweight support and durability. \
+        Featuring Air Max cushioning technology in the heels, the shoes provide responsive impact \
+        absorption and all-day comfort, making them ideal for urban adventures and active lifestyles alike."
     },
     {
         id: 2,
@@ -19,7 +23,10 @@ const products = [
         category: "Athletic", 
         gender: "Men's",
         color: "Grey",
-        size: "9"
+        size: "9",
+        description: "Feel confident and comfortable with the ASICS Men's Jolt 4 Shoes. \
+        The engineered mesh upper construction offers breathability, and the solid rubber \
+        outsoles with flex grooves ensure long-lasting use and optimal movement."
     },
     {
         id: 3,
@@ -30,7 +37,9 @@ const products = [
         category: "Running", 
         gender: "Men's",
         color: "White",
-        size: "7"
+        size: "7",
+        description: "Enjoy going wherever your run takes you wearing the Under Armour Men's \
+        Pursuit 3 Running Shoes. The performance mesh uppers offer lightweight, breathable wear."
     },
     {
         id: 4,
@@ -41,7 +50,10 @@ const products = [
         category: "Running", 
         gender: "Women's",
         color: "White",
-        size: "6"
+        size: "6",
+        description: "Support your feet through your morning run with the Nike Women's Run Swift \
+        3 Running Shoes. Mesh panels in the uppers provide cooling ventilation while flywire cables\
+        lock your feet in place."
     },
     {
         id: 5,
@@ -52,7 +64,10 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "Brown",
-        size: "8"
+        size: "8",
+        description: "Elevate your everyday look with Magellan Outdoors Men's Clive II Shoes. \
+        Perfect for backyard hangouts and casual outings, they feature flexible man made and \
+        textile uppers with easy slip-on style."
     },
     {
         id: 6,
@@ -63,7 +78,10 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "Black",
-        size: "11"
+        size: "11",
+        description: "Combine comfort and style with the SKECHERS Men's Slade Bungee Lace Slip-In Shoes. \
+        The Air-Cooled Memory Foam insoles boost breathability to help your feet feel cool in the heat, \
+        and the mesh and synthetic uppers promote durability."
     },
     {
         id: 7,
@@ -74,7 +92,9 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "Brown",
-        size: "7"
+        size: "7",
+        description: "Slip on a new style with the Converse Men's Chuck Taylor All-Star Malden Street Low \
+        Top Shoes. The premium canvas material ensures breathability, while OrthoLite cushioning provides comfort."
     },
     {
         id: 8,
@@ -85,7 +105,10 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "Green",
-        size: "8"
+        size: "8",
+        description: "The Arizona EVA sandal is a lightweight, water-friendly sandal molded after \
+        the iconic cork original you know and love. Providing true comfort and support, these are \
+        perfect for your beach and pool adventures."
     },
     {
         id: 9,
@@ -96,7 +119,10 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "Brown",
-        size: "10"
+        size: "10",
+        description: "Birkenstock's two-strap classic, the Arizona features their iconic original \
+        contoured cork footbed for all day support. Featuring a synthetic leather upper, it's perfect \
+        for casual errands, post-hike adventures, or anywhere in between."
     },
     {
         id: 10,
@@ -107,7 +133,9 @@ const products = [
         category: "Casual", 
         gender: "Both",
         color: "Blue",
-        size: "9"
+        size: "9",
+        description: "The Crocs™ Adults' Classic Clogs feature a loose-fit design and are made from \
+        fully molded Croslite™ thermoplastic material that forms to your feet to create a comfortable, custom fit."
     },
     {
         id: 11,
@@ -118,7 +146,11 @@ const products = [
         category: "Casual", 
         gender: "Both",
         color: "Pink",
-        size: "6"
+        size: "6",
+        description: "Stay comfortable in style with the Crocs Adults' Classic Glitter Clogs. These \
+        classic clogs feature a lightweight cushioned construction with Crocs Comfort™ for a comfortable wear. \
+        The ventilation ports add breathability and help shed water and debris, while the allover built-in \
+        glitter design adds a stylish look."
     },
     {
         id: 12,
@@ -129,7 +161,10 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "Black",
-        size: "13"
+        size: "13",
+        description: "Conquer what life throws at you with the Timberland Men's Allstone Shoes. The Premium \
+        Timberland leather uppers afford durability, while the ground-contact EVA midsoles provide comfort. \
+        The lace closures offer a secure fit."
     },
     {
         id: 13,
@@ -140,7 +175,10 @@ const products = [
         category: "Casual", 
         gender: "Both",
         color: "Red",
-        size: "8"
+        size: "8",
+        description: "Slide into style and comfort with the Crocs Adults' Mellow Recovery Slides. \
+        The LiteRide foam footbeds provide a comfortable feel, while the upper windows offer improved \
+        breathability. The contemporary uppers deliver a stylish look."
     },
     {
         id: 14,
@@ -151,7 +189,11 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "White",
-        size: "8"
+        size: "8",
+        description: "Hit the beach in style with the HEYDUDE Men's Wally Hey20 Slip-on Shoes. \
+        These slip-on shoes have pull tabs on the heels so you can put them on quickly. \
+        The mesh uppers, foam insoles and padded collars provide a comfortable beach fit, \
+        and the traction pods on the outsoles help you keep your footing."
     },
     {
         id: 15,
@@ -162,7 +204,10 @@ const products = [
         category: "Running", 
         gender: "Men's",
         color: "Blue",
-        size: "11"
+        size: "11",
+        description: "Step out for a run sporting the Under Armour Men's Charged Assert 10 \
+        Running Shoes. The rubber outsoles are durable enough to remain resilient no matter \
+        what terrain you run on, and the mesh uppers with synthetic overlays provide added comfort."
     },
     {
         id: 16,
@@ -173,7 +218,9 @@ const products = [
         category: "Athletic", 
         gender: "Men's",
         color: "White",
-        size: "10"
+        size: "10",
+        description: "Play your best game in the adidas Men's GameCourt 2 Tennis Shoes. \
+        EVA midsoles energize your steps with responsive cushioning, while padded heels provide stability."
     },
     {
         id: 17,
@@ -184,7 +231,10 @@ const products = [
         category: "Athletic", 
         gender: "Men's",
         color: "Grey",
-        size: "10"
+        size: "10",
+        description: "The New Balance Men's 696v5 Tennis Shoes are sleek, comfortable and ready to play. \
+        The uppers have a low-cut design and are crafted from performance man-made materials. \
+        The durable soles are non-marking and help you move efficiently on the court."
     },
     {
         id: 18,
@@ -195,7 +245,11 @@ const products = [
         category: "Athletic", 
         gender: "Men's",
         color: "Black",
-        size: "12"
+        size: "12",
+        description: "Move side to side with ease in the ASICS Men's Gel-Dedicate 8 Tennis Shoes. \
+        These flexible shoes help you feel centered and move confidently during long tennis matches. \
+        Synthetic leather uppers with overlays and laces keep your feet locked in and supported, \
+        while wrap-up outsoles keep your feet stable."
     },
     {
         id: 19,
@@ -206,7 +260,10 @@ const products = [
         category: "Athletic", 
         gender: "Men's",
         color: "Black",
-        size: "12"
+        size: "12",
+        description: "Tear up the court during games and practices when you sport the Nike Men's Kyrie \
+        Flytrap II Basketball Shoes. Featuring Nike™ Zoom technology, these shoes deliver a controlled \
+        feel while you run, dribble and pivot and are inspired by NBA player Kyrie Irving."
     },
     {
         id: 20,
@@ -217,7 +274,10 @@ const products = [
         category: "Athletic", 
         gender: "Men's",
         color: "White",
-        size: "10"
+        size: "10",
+        description: "Step out onto the court with the Nike Men's LeBron VII TB Basketball Shoes. \
+        The breathable, lightweight upper construction features cooling and air movement, while the \
+        LeBron design makes it clear you're a true fan."
     },
     {
         id: 21,
@@ -228,7 +288,10 @@ const products = [
         category: "Athletic", 
         gender: "Both",
         color: "White",
-        size: "9"
+        size: "9",
+        description: "Wear the adidas Adults' Trae Unlimited Basketball Shoes for comfort while playing \
+        your favorite sport. Featuring textile uppers and lining to create a unique look, these shoes \
+        are made with recycled materials. The shoes also come with rubber outsoles to provide traction."
     },
     {
         id: 22,
@@ -239,7 +302,10 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "Red",
-        size: "8"
+        size: "8",
+        description: "After an intense day, your feet will thank you for the adidas Men's Adilette Shower \
+        Slides. With cloudfoam footbeds that are contoured to your foot's natural shape and movement, these \
+        slides are easy to slip on comfortable and relaxed feeling."
     },
     {
         id: 23,
@@ -250,7 +316,9 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "Green",
-        size: "12"
+        size: "12",
+        description: "Lounge by the pool with the Magellan Outdoors Men's EVA Cushion Pool Slides. \
+        The EVA uppers provide a soft feel, while the comfort footbeds offers increased cushioning."
     },
     {
         id: 24,
@@ -261,7 +329,10 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "Brown",
-        size: "7"
+        size: "7",
+        description: "Slide into comfort with the Magellan Outdoors Men's Lightweight Flip II Sport \
+        Slides. The PU uppers offer durability, while the footbeds provide cushioned comfort. The \
+        slip on design allows for easy on/off."
     },
     {
         id: 25,
@@ -272,7 +343,10 @@ const products = [
         category: "Casual", 
         gender: "Men's",
         color: "Black",
-        size: "5"
+        size: "5",
+        description: "Find a spot by the water and enjoy your day wearing the Teva Men’s Winstead \
+        Sandals. The webbed uppers provide a lightweight, breathable wear, and the water-friendly \
+        design helps ensure your feet stay comfortable when moving in the water."
     },
     {
         id: 26,
@@ -283,7 +357,10 @@ const products = [
         category: "Athletic", 
         gender: "Men's",
         color: "White",
-        size: "9"
+        size: "9",
+        description: "Complete your casual look with the New Balance Men's 515 Retro Sneaker. \
+        Featuring a heritage-inspired design, these shoes have suede leather uppers. \
+        Solid-rubber outsoles provide support."
     },
     {
         id: 27,
@@ -294,7 +371,10 @@ const products = [
         category: "Athletic", 
         gender: "Men's",
         color: "Blue",
-        size: "6"
+        size: "6",
+        description: "Kick up your everyday wardrobe with the New Balance Men's 997H Shoes. \
+        These retro-inspired shoes feature stylish leather uppers for a classy look. \
+        The lightweight cushioning delivers durability and day-long comfort."
     },
     {
         id: 28,
@@ -305,7 +385,10 @@ const products = [
         category: "Athletic", 
         gender: "Men's",
         color: "White",
-        size: "11"
+        size: "11",
+        description: "Hit the weights with the New Balance Men's 608 Training Shoes. \
+        The synthetic uppers afford durability, while the PU insoles provide comfort. \
+        The lace closures offer a snug fit."
     },
     {
         id: 29,
@@ -316,7 +399,10 @@ const products = [
         category: "Boots", 
         gender: "Men's",
         color: "Brown",
-        size: "12"
+        size: "12",
+        description: "Built for wet conditions and long hours, the Wolverine Men's Trade Wedge \
+        Steel Toe Boots keep you comfortable and protected. The steel toe provides safety \
+        without sacrificing flexibility, while waterproof materials shield your feet from the elements."
     },
     {
         id: 30,
@@ -327,7 +413,10 @@ const products = [
         category: "Boots", 
         gender: "Men's",
         color: "Brown",
-        size: "10"
+        size: "10",
+        description: "Get to work with the Ariat Men's Treadfast Waterproof Steel Toe Work Boots.\
+        The full-grain leather uppers afford durability, while the Duratread outsoles are oil \
+        and slip resistant for lasting wear."
     },
     {
         id: 31,
@@ -338,7 +427,10 @@ const products = [
         category: "Boots", 
         gender: "Men's",
         color: "Red",
-        size: "9"
+        size: "9",
+        description: "You've got a big job ahead, and you need the right boots to get you through. \
+        With the Wolverine Men's Rancher EH Steel Toe Wellington Waterproof Work Boots, you'll \
+        stay protected from tough site conditions, thanks to the electrical hazard (EH) rating and steel toes."
     },
     {
         id: 31,
@@ -349,7 +441,10 @@ const products = [
         category: "Boots", 
         gender: "Men's",
         color: "Black",
-        size: "8"
+        size: "8",
+        description: "Feel confident performing high-demanding tasks wearing the Brazos Men's Midnight II \
+        Soft Toe Boots. The PVC waterproof upper construction helps keep your feet dry all day, and the \
+        PU molded removable footbeds deliver a snug and comfortable feel."
     },
     {
         id: 31,
@@ -360,7 +455,10 @@ const products = [
         category: "Boots", 
         gender: "Men's",
         color: "Blue",
-        size: "10"
+        size: "10",
+        description: "Gear up for a day out on the water with the Xtratuf Men's Ankle Deck Boots. \
+        Hand laid rubber construction provides durability for long-lasting use, and the waterproof \
+        design ensures you feet stay dry throughout the day."
     },
     {
         id: 32,
@@ -371,7 +469,11 @@ const products = [
         category: "Boots", 
         gender: "Men's",
         color: "Green",
-        size: "11"
+        size: "11",
+        description: "Keep your feet comfortable and protected during the hunting trip with the \
+        LaCrosse Men's 18 in Grange Mossy Oak Country DNA Hunting Boots. The ZXT rubber construction \
+        delivers a stretchy and waterproof design that lasts, and the EVA footbeds offer comfort during \
+        the hunt. "
     },
     {
         id: 33,
@@ -382,7 +484,10 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "Black",
-        size: "4"
+        size: "4",
+        description: "Put your stylish side on display on and off the court whenever you pull on and lace \
+        up the Nike Women's Court Legacy Lift Platform Shoes. The layered uppers create a classic look and \
+        fit. The pillowed heels and tongues add a soft feel."
     },
     {
         id: 34,
@@ -393,7 +498,10 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "Blue",
-        size: "5"
+        size: "5",
+        description: "Get retro with the Nike Women's Waffle Debut Shoes. These classic sneakers feature a \
+        nylon suede upper that offer a modern look. The lifted foam midsole provides a comfortable ride, \
+        while the rubber waffle outsole offers excellent traction and durability."
     },
     {
         id: 35,
@@ -404,7 +512,10 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "Pink",
-        size: "6"
+        size: "6",
+        description: "Slip into the New Balance Women's 237 Lifestyle Shoes and head out in comfort. \
+        The suede, mesh and nylon uppers deliver softness and flex, while the brand details express \
+        an eye-catching appearance."
     },
     {
         id: 36,
@@ -415,7 +526,11 @@ const products = [
         category: "Running", 
         gender: "Women's",
         color: "Blue",
-        size: "8"
+        size: "8",
+        description: "Support your feet through your morning run with the Nike Women's Run Swift 3 Running Shoes. \
+        Mesh panels in the uppers provide cooling ventilation while flywire cables lock your feet in place. \
+        Foam midsoles cushion your feet for softness at every step, and the rubber outsoles feature flex \
+        grooves to promote natural motion."
     },
     {
         id: 37,
@@ -426,7 +541,9 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "Red",
-        size: "5"
+        size: "5",
+        description: "Enjoy comfortable cushioning with every step in the adidas Women's X_PLR Path Shoes. \
+        Suitable for either casual wear or exercise, these versatile shoes deliver an athletic look and feel."
     },
     {
         id: 38,
@@ -437,7 +554,11 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "Brown",
-        size: "3"
+        size: "3",
+        description: "Show off your casual, sporty style in the Nike Women's Air Max SC Shoes. These \
+        shoes feature leather, textile and mesh uppers for a durability and long-lasting comfort. \
+        The Max Air units deliver lightweight cushioning with every step, while the rubber outsoles \
+        are designed with flex grooves to provide traction and durability."
     },
     {
         id: 39,
@@ -448,7 +569,10 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "Black",
-        size: "8"
+        size: "8",
+        description: "Feel confident and comfortable with the ASICS Women's Jolt 4 Shoes. \
+        The engineered mesh upper construction offers breathability, and the solid rubber \
+        outsoles with flex grooves ensure long-lasting use and optimal movement."
     },
     {
         id: 40,
@@ -459,7 +583,11 @@ const products = [
         category: "Running", 
         gender: "Women's",
         color: "Pink",
-        size: "6"
+        size: "6",
+        description: "Ditch the schedule, chase the day! The adidas Women's Galaxy 7 \
+        Running Shoes are your comfy companions for wherever life takes you. The \
+        breathable mesh upper keeps your feet cool on the move, while the Cloudfoam \
+        midsole delivers a springy, cushioned ride."
     },
     {
         id: 41,
@@ -470,7 +598,11 @@ const products = [
         category: "Running", 
         gender: "Women's",
         color: "Grey",
-        size: "5"
+        size: "5",
+        description: "Go for your new personal best when you wear the Brooks Women's \
+        Ghost 16 Running Shoes. The super-soft, nitrogen-infused DNA LOFT v3 cushioning \
+        delivers lightweight comfort, while the engineered air mesh uppers provide a \
+        combination of stretch, structure and breathability. "
     },
     {
         id: 42,
@@ -481,7 +613,10 @@ const products = [
         category: "Running", 
         gender: "Women's",
         color: "Yellow",
-        size: "4"
+        size: "4",
+        description: "Lace up for plush comfort with the Nike Women's Journey Running Shoes. \
+        These running shoes feature ultra-soft cushioning that absorbs shock with every stride, \
+        keeping your feet happy on every run. "
     },
     {
         id: 43,
@@ -492,7 +627,10 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "Red",
-        size: "8"
+        size: "8",
+        description: "Show off your 80's style in the Nike Women’s Court Vision Low Next Nature Shoes. \
+        These shoes feature durable synthetic uppers with a low-top style for a modern, 80's look. \
+        The perforated toes and sides keep your feet cool, while the rubber outsoles deliver sturdy traction."
     },
     {
         id: 44,
@@ -503,7 +641,11 @@ const products = [
         category: "Casual", 
         gender: "Women's",
         color: "White",
-        size: "6"
+        size: "6",
+        description: "The Reef Women's Cushion Vista Hi Sandals are a versatile choice for women seeking a \
+        comfortable and stylish summer sandal. They combine a trendy platform design with superior cushioning, \
+        water-resistant materials, and a durable construction, making them ideal for everyday wear, light \
+        adventures, or poolside relaxation."
     },
     {
         id: 45,
@@ -514,7 +656,10 @@ const products = [
         category: "Casual", 
         gender: "Women's",
         color: "Purple",
-        size: "5"
+        size: "5",
+        description: "Escape in style with the Crocs Women's Getaway Strappy Sandal. These chic sandals \
+        feature a trendy strappy design that adds flair to any outfit. Made with Crocs' signature \
+        comfort technology, they offer support and cushioning for all-day wear."
     },
     {
         id: 46,
@@ -525,7 +670,10 @@ const products = [
         category: "Casual", 
         gender: "Women's",
         color: "Black",
-        size: "7"
+        size: "7",
+        description: "Enjoy casual comfort with the Freely Women's Double Band EVA Slide. \
+        The EVA uppers offer durability, while the footbeds provide a comfortable feel. \
+        The slip-on design allows for easy on and off."
     },
     {
         id: 47,
@@ -536,7 +684,10 @@ const products = [
         category: "Casual", 
         gender: "Women's",
         color: "Brown",
-        size: "4"
+        size: "4",
+        description: "Birkenstock's two-strap classic, the Arizona features their iconic \
+        original contoured cork footbed for all day support. Featuring a synthetic leather \
+        upper, it's perfect for casual errands, post-hike adventures, or anywhere in between."
     },
     {
         id: 48,
@@ -547,7 +698,11 @@ const products = [
         category: "Casual", 
         gender: "Women's",
         color: "Blue",
-        size: "6"
+        size: "6",
+        description: "Step to it with the OOFOS Women's OOlala Luxe Recovery Sandals. The synthetic \
+        uppers afford durability, while the OOfoam™ recovery technology helps reduce stress on your \
+        feet, knees and back. The moisture and bacteria resistant design ensures a fresh feel. \
+        Indulge your feet in luxurious recovery."
     },
     {
         id: 49,
@@ -558,7 +713,11 @@ const products = [
         category: "Casual", 
         gender: "Women's",
         color: "Pink",
-        size: "5"
+        size: "5",
+        description: "If you need a pair of slides that offer cool style without sacrificing comfort, \
+        turn to the Freely Women's Delilah Comfort Slides. These slides are made from a single piece \
+        of EVA to help provide long-lasting comfort without adding bulk, and the textured footbeds \
+        provide grip to help you walk confidently."
     },
     {
         id: 50,
@@ -569,7 +728,10 @@ const products = [
         category: "Casual", 
         gender: "Women's",
         color: "Blue",
-        size: "8"
+        size: "8",
+        description: "Enjoy a casual, stylish look with the Freely Women's Raffia Platform Sandals. \
+        The textile uppers afford durability, while the adjustable buckles with hook-and-loop closures \
+        offer a secure fit."
     },
     {
         id: 51,
@@ -580,7 +742,10 @@ const products = [
         category: "Casual", 
         gender: "Women's",
         color: "Blue",
-        size: "6"
+        size: "6",
+        description: "Step into style with the Converse Women's Chuck Taylor All-Star High-Top Shoes. \
+        The canvas material is lightweight and durable, and the textile linings provide a comfortable \
+        feel. The high-top design offers ankle support."
     },
     {
         id: 52,
@@ -591,7 +756,10 @@ const products = [
         category: "Casual", 
         gender: "Women's",
         color: "Grey",
-        size: "7"
+        size: "7",
+        description: "Get ready for your next outing with the SKECHERS Women's Summits Fun Flair Shoes. \
+        The vegan mesh uppers promote breathability, while the Memory Foam cushioned insoles provide \
+        comfort. The flexible outsoles offer traction, and the stretch laces deliver a slip-on fit."
     },
     {
         id: 53,
@@ -602,7 +770,11 @@ const products = [
         category: "Casual", 
         gender: "Women's",
         color: "Pink",
-        size: "8"
+        size: "8",
+        description: "Step into a world of style with the Converse Women's Chuck Taylor All-Star \
+        Shoreline Slip-On Shoes. The canvas material is durable, and the textile linings provide \
+        comfort. The fixed laces, stretchy collars and heel loops offer easy on and off, and the \
+        OrthoLite cushioning adds comfort."
     },
     {
         id: 54,
@@ -613,7 +785,11 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "White",
-        size: "9"
+        size: "9",
+        description: "Step onto the court ready to play with the Nike Women's Zoom Court Lite 3 \
+        Tennis Shoes. The leather uppers provide flexibility and durability, while the data-\
+        informed outsoles offer grip and additional durability. The Zoom Air units in the \
+        forefoot deliver increased response, and the plush padded collars ensure a snug fit."
     },
     {
         id: 55,
@@ -624,7 +800,10 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "White",
-        size: "7"
+        size: "7",
+        description: "Take your game to the next level in the Mizuno Women's Wave Luminous 2 Court Shoes. \
+        The knit uppers supply a soft, lightweight feel. The DynamotionFit Bootie construction encourages \
+        a snug fit for stability."
     },
     {
         id: 56,
@@ -635,7 +814,10 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "Yellow",
-        size: "6"
+        size: "6",
+        description: "Stay game ready on the court in the adidas Women's adizero Ubersonic 4 Tennis Shoes. \
+        The Primegreen engineered stretch woven uppers with ADIWEAR™ elements provide durability, \
+        lightweight, secure wear and an ecofriendly design."
     },
     {
         id: 57,
@@ -646,7 +828,10 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "White",
-        size: "5"
+        size: "5",
+        description: "Show off your basketball skills with the Nike Adults' Air Zoom GT \
+        Cut Academy Basketball Shoes. The mesh upper construction offers ventilation for \
+        all-day comfort, and the Air Zoom technology provides a soft feel with every jump."
     },
     {
         id: 58,
@@ -657,7 +842,10 @@ const products = [
         category: "Athletic", 
         gender: "Women's",
         color: "Black",
-        size: "9"
+        size: "9",
+        description: "Cruise down the court in the Nike Women's Renew Elevate 3 Basketball Shoes. \
+        The foam construction provides comfort, while the lace closures offer a secure fit. \
+        The logos deliver a stylish look."
     },
     {
         id: 59,
@@ -668,7 +856,10 @@ const products = [
         category: "Boots", 
         gender: "Women's",
         color: "White",
-        size: "8"
+        size: "8",
+        description: "Rain won't keep you from exploring the great outdoors with the Magellan \
+        Outdoors Women's Short Rubber Boots. The rubber uppers are waterproof, and the rubber \
+        outsoles are slip-resistant. Memory foam footbeds cradle and cushion your feet with every step."
     },
     {
         id: 60,
@@ -679,7 +870,11 @@ const products = [
         category: "Boots", 
         gender: "Women's",
         color: "Green",
-        size: "5"
+        size: "5",
+        description: "Prepare for rainy days with the Xtratuf Women's Ankle Deck Boots. \
+        These boots have slip-resistant outsoles to help keep your footing secure and steady, \
+        while the EVA foam insoles provide comfort that lasts throughout the day. 100% waterproof \
+        for maximum protection."
     }
 ];
 
@@ -783,6 +978,7 @@ function loadProductDetails() {
     document.getElementById("product-category").textContent = product.category;
     document.getElementById("product-color").textContent = product.color;
     document.getElementById("product-size").textContent = product.size;
+    document.getElementById("product-description").textContent = product.description;
 }
 
 function performSearch() {
