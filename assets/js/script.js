@@ -686,7 +686,7 @@ const products = [
 const productsPerPage = 15;
 let currentPage = 1;
 
-const searchBar = document.getElementById('searchbar');
+var searchBar= document.getElementById('searchbar');
 
 function loadProductGrid(page = 1) {
     const container = document.getElementById("product-grid");
@@ -763,7 +763,6 @@ function loadProductDetails() {
 }
 
 function loadSearchGrid(page = 1){
-
     // Basically loadProductGrid() with a slight modification....ugly but it works lol
     var searched = document.getElementById('searchbar').value;
     if(searched === ""){
@@ -783,7 +782,9 @@ function loadSearchGrid(page = 1){
     const start = (page - 1) * productsPerPage;
     const end = start + productsPerPage;
     const currentProducts = products.slice(start, end);
-    filteredProducts = currentProducts.filter((function(str){return searchQuery.test(str.brand);}));
+    filteredProducts = currentProducts.filter((function(str){
+        return searchQuery.test(str.brand) || searchQuery.test(str.name) || searchQuery.test(str.size);
+    }));
     filteredProducts.forEach(product => {
         const card = document.createElement("div");
         card.className = "product-card";
@@ -802,4 +803,10 @@ function loadSearchGrid(page = 1){
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-searchBar.addEventListener('keyup',function(){ loadSearchGrid(1);},false);
+//document.addEventListener('DOMContentLoaded', loadProductGrid,false);
+if(!searchBar){
+    searchBar = document.getElementById('searchbar');
+}
+else{
+    searchBar.addEventListener('keyup',function(){ loadSearchGrid(1);},false);
+}
