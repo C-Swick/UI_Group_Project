@@ -686,6 +686,8 @@ const products = [
 const productsPerPage = 15;
 let currentPage = 1;
 
+const searchBar = document.getElementById('searchbar');
+
 function loadProductGrid(page = 1) {
     const container = document.getElementById("product-grid");
     if (!container) return;
@@ -760,3 +762,44 @@ function loadProductDetails() {
     document.getElementById("product-size").textContent = product.size;
 }
 
+function loadSearchGrid(page = 1){
+
+    // Basically loadProductGrid() with a slight modification....ugly but it works lol
+    var searched = document.getElementById('searchbar').value;
+    if(searched === ""){
+        loadProductGrid();
+        return;
+    }
+    var searchQuery = new RegExp(searched,'i');
+    //const currentProducts = products.slice(start,end);
+    var filteredProducts = new Array(0);
+    //console.log(searchQuery)
+    //Find products containing the search string -- regex
+
+    const container = document.getElementById("product-grid");
+    if (!container) return;
+
+    container.innerHTML = "";
+    const start = (page - 1) * productsPerPage;
+    const end = start + productsPerPage;
+    const currentProducts = products.slice(start, end);
+    filteredProducts = currentProducts.filter((function(str){return searchQuery.test(str.brand);}));
+    filteredProducts.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+            <div class="product-image">
+                <img src="${product.image}" alt="${product.name}" />
+            </div>
+            <h2>${product.name}</h2>
+            <p>${product.price}</p>
+            <button onclick="viewProductDetails(${product.id})">View Product Details</button>
+        `;
+        container.appendChild(card);
+    });
+
+    updatePagination();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+searchBar.addEventListener('keyup',function(){ loadSearchGrid(1);},false);
